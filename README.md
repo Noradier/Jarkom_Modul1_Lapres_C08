@@ -10,6 +10,10 @@ Sebutkan webserver yang digunakan pada "testing.mekanis.me"!
 - Follow HTTP Stream dari paket yang telah diperoleh
 - Carilah string **server** untuk memperoleh webserver dari website tersebut
 
+![Gambar 1-1](1-1.png)
+
+![Gambar 1-2](1-2.png)
+
 ## 2
 
 ### Soal
@@ -33,6 +37,10 @@ Cari username dan password ketika login di "ppid.dpr.go.id"!
 - Gunakan display filter: **http.request.method  == “POST” && http.host == “ppid.dpr.go.id”**
 - Follow HTTP Stream dari paket yang telah diperoleh
 - Carilah string **username** atau **password** untuk memperoleh username dan password ketika login di website tersebut
+
+![Gambar 3-1](3-1.png)
+
+![Gambar 3-2](3-2.png)
 
 ## 4
 
@@ -59,6 +67,13 @@ di file .pcapng yang telah diberikan.
 - Konversikan kode base64 ke teks (Bisa melalui third party website) untuk memperoleh login credentials
 - Login dan kerjakan soal pada web tersebut
 
+![Gambar 5-1](5-1.png)
+
+![Gambar 5-2](5-2.png)
+
+![Gambar 5-3](5-3.png)
+
+![Gambar 5-4](5-4.png)
 ## 6
 
 ### Soal
@@ -93,6 +108,14 @@ Melalui hint, kita mengetahui bahwa file yang harus kita cari bernama **Yes.pdf*
 - Simpan file yang didapat dengan format **RAW** dan berekstensi **zip**
 - Buka file .zip tersebut dan extract file .pdf yang ada di dalam archive tersebut
 
+![Gambar 7-1](7-1.png)
+
+![Gambar 7-2](7-2.png)
+
+![Gambar 7-3](7-3.png)
+
+![Gambar 7-4](7-4.png)
+
 ## 8
 
 ### Soal
@@ -115,6 +138,8 @@ Cari username dan password ketika login FTP pada localhost!
 - Gunakan display filter: **ftp.request.command == “USER” || ftp.request.command == “PASS”**
 - Akan terlihat Username dan Password yang telah digunakan saat login FTP client
 
+![Gambar 9-1](9-1.png)
+
 ## 10
 
 ### Soal
@@ -136,6 +161,10 @@ Filter sehingga wireshark hanya mengambil paket yang mengandung port 21!
 ### Jawaban
 - Gunakan capture filter: **port 21** (Merupakan port untuk FTP)
 
+![Gambar 11-1](11-1.png)
+
+![Gambar 11-1](11-2.png)
+
 ## 12
 
 ### Soal
@@ -153,6 +182,10 @@ Filter sehingga wireshark hanya menampilkan paket yang menuju port 443!
 
 ### Jawaban
 - Gunakan capture filter: **dst port 443** (Merupakan port untuk https)
+
+![Gambar 13-1](13-1.png)
+
+![Gambar 13-2](13-2.png)
 
 ## 14
 
@@ -174,3 +207,7 @@ Filter sehingga wireshark hanya mengambil paket yang tujuannya ke monta.if.its.a
 
 ### Jawaban
 - Gunakan capture filter: **dst host monta.if.its.ac.id**
+
+![Gambar 15-1](15-1.png)
+
+![Gambar 15-2](15-2.png)
