@@ -3,8 +3,12 @@
 ## 1
 
 ### Soal
+Sebutkan webserver yang digunakan pada "testing.mekanis.me"!
 
 ### Jawaban
+- Gunakan display filter: **http.host == “testing.mekanis.me”**
+- Follow HTTP Stream dari paket yang telah diperoleh
+- Carilah string **server** untuk memperoleh webserver dari website tersebut
 
 ## 2
 
@@ -23,8 +27,12 @@ Simpan gambar "Tim_Kunjungan_Kerja_BAKN_DPR_RI_ke_Sukabumi141436.jpg"
 ## 3
 
 ### Soal
+Cari username dan password ketika login di "ppid.dpr.go.id"!
 
 ### Jawaban
+- Gunakan display filter: **http.request.method  == “POST” && http.host == “ppid.dpr.go.id”**
+- Follow HTTP Stream dari paket yang telah diperoleh
+- Carilah string **username** atau **password** untuk memperoleh username dan password ketika login di website tersebut
 
 ## 4
 
@@ -39,8 +47,17 @@ Temukan paket dari web-web yang menggunakan basic authentication method!
 ## 5
 
 ### Soal
+Ikuti perintah di aku.pengen.pw! Username dan password bisa didapatkan dari file .pcapng!
 
 ### Jawaban
+Pada website tersebut, kita diminta untuk melakukan proses login. Untuk menemukan login credentials, maka kita perlu mencari username dan password
+di file .pcapng yang telah diberikan.
+
+- Gunakan display filter: **http.host == “aku.pengen.pw”**
+- Follow HTTP Stream dari paket yang telah diperoleh
+- Carilah string **authorization** untuk memperoleh kode base64 dari login credentials
+- Konversikan kode base64 ke teks (Bisa melalui third party website) untuk memperoleh login credentials
+- Login dan kerjakan soal pada web tersebut
 
 ## 6
 
@@ -66,8 +83,15 @@ Seseorang menyimpan file zip melalui FTP dengan nama "Answer.zip". Simpan dan Bu
 ## 7
 
 ### Soal
+Ada 500 file zip yang disimpan ke FTP Server dengan nama 1.zip, 2.zip, ..., 500.zip. Salah satunya berisi pdf yang berisi puisi. Simpan dan Buka file pdf tersebut.
 
 ### Jawaban
+Melalui hint, kita mengetahui bahwa file yang harus kita cari bernama **Yes.pdf**
+
+- Gunakan display filter: **frame contains “Yes.pdf”**
+- Follow TCP Stream paket tersebut
+- Simpan file yang didapat dengan format **RAW** dan berekstensi **zip**
+- Buka file .zip tersebut dan extract file .pdf yang ada di dalam archive tersebut
 
 ## 8
 
@@ -85,8 +109,11 @@ Cari objek apa saja yang didownload (RETR) dari koneksi FTP dengan Microsoft FTP
 ## 9
 
 ### Soal
+Cari username dan password ketika login FTP pada localhost!
 
 ### Jawaban
+- Gunakan display filter: **ftp.request.command == “USER” || ftp.request.command == “PASS”**
+- Akan terlihat Username dan Password yang telah digunakan saat login FTP client
 
 ## 10
 
@@ -104,8 +131,10 @@ Cari file .pdf di wireshark lalu download dan buka file tersebut!
 ## 11
 
 ### Soal
+Filter sehingga wireshark hanya mengambil paket yang mengandung port 21!
 
 ### Jawaban
+- Gunakan capture filter: **port 21** (Merupakan port untuk FTP)
 
 ## 12
 
@@ -120,8 +149,10 @@ Filter sehingga wireshark hanya mengambil paket yang berasal dari port 80!
 ## 13
 
 ### Soal
+Filter sehingga wireshark hanya menampilkan paket yang menuju port 443!
 
 ### Jawaban
+- Gunakan capture filter: **dst port 443** (Merupakan port untuk https)
 
 ## 14
 
@@ -139,5 +170,7 @@ Filter sehingga wireshark hanya mengambil paket yang berasal dari ip kalian!
 ## 15
 
 ### Soal
+Filter sehingga wireshark hanya mengambil paket yang tujuannya ke monta.if.its.ac.id!
 
 ### Jawaban
+- Gunakan capture filter: **dst host monta.if.its.ac.id**
